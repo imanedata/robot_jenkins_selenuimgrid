@@ -3,7 +3,7 @@ Documentation    importer la lib selenium
 Library    SeleniumLibrary
 Resource    ../templates/login_template.resource    
 Test Template    affichage
-Test Setup    Open Browser    ${url}    ${browser}    remote_url=http://127.0.0.1:4444/wd/hub
+Test Setup    Open Browser    ${url}    ${browser}    remote_url=http://192.168.1.112:4444/wd/hub
 Test Teardown    Close All Browsers
 Library    DataDriver    ../data/login.csv    dialect=excel    delimiter=,    encoding=utf-8
 
