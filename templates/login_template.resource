@@ -1,11 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
 Resource  ../pages/login_page.resource
-
-
-
-
-
 *** Keywords ***
 Login avec username et password
     [Arguments]    ${username}    ${password}     ${r_attendu}
