@@ -22,17 +22,7 @@ pipeline {
             }
     }
     }
-     success {
-            echo '✅ Les tests Robot éussi.'
-        }
-
-        failure {
-            echo "❌ Les tests Robot ont échoué."
-        }
-
-        unstable {
-            echo '⚠️ Les tests sont instables.'
-        }
+   
       
           
 
