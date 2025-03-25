@@ -12,6 +12,7 @@ pipeline {
         stage('Install python'){
                 steps {
                 sh'pip install -r requirements.txt'
+                sh'pip freeze > requirements.txt'
                 sh ' sh python3.13 -m pip install -r requirements.txt'
             }
         }
