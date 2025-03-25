@@ -1,0 +1,4 @@
+*** Test Cases ***,${username},${password},${resultat}
+Case 1,standard_user,secret_sauce,ok
+Case 2,Sstandar,secret_sauce,ko
+Case 3,standard_user,secret,ko

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T14:22:59.933823" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Data" source="c:\Users\User\Documents\p1\tests\login_data.robot">
+<test id="s1-t1" name="affichage ${username}" line="17">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-03-25T14:23:00.195490" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-25T14:23:00.195122" elapsed="1.547496"/>
+</kw>
+<kw name="affichage">
+<msg time="2025-03-25T14:23:01.744360" level="FAIL">Variable '${password}' not found.</msg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="FAIL" start="2025-03-25T14:23:01.743576" elapsed="0.001045">Variable '${password}' not found.</status>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-25T14:23:01.745294" elapsed="2.122475"/>
+</kw>
+<status status="FAIL" start="2025-03-25T14:23:00.193045" elapsed="3.676761">Variable '${password}' not found.</status>
+</test>
+<doc>importer la lib selenium</doc>
+<status status="FAIL" start="2025-03-25T14:22:59.937576" elapsed="3.938225"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Data" id="s1" pass="0" fail="1" skip="0">Login Data</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-03-25T14:23:00.185889" level="ERROR">[ DataDriver ] Error in robot file:
+  File "c:\Users\User\Documents\p1\tests\login_data.robot", line 0</msg>
+<msg time="2025-03-25T14:23:00.188595" level="ERROR">In source file:
+  File "../data/loginData.csv", line 0</msg>
+<msg time="2025-03-25T14:23:00.191707" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was not a full path. Tried to find c:\Users\User\Documents\p1\tests\..\data\loginData.csv but file does not exist.</msg>
+</errors>
+</robot>
