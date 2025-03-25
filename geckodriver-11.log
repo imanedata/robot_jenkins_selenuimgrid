@@ -9,3 +9,4 @@ WebDriver BiDi listening on ws://127.0.0.1:62635
 Read port: 62642
 1742909937565	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
 DevTools listening on ws://127.0.0.1:62635/devtools/browser/8b986502-1508-42e8-b778-de66826f86a1
+Exiting due to channel error.

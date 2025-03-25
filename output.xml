@@ -1,104 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T14:38:34.373587" rpa="false" schemaversion="5">
-<suite id="s1" name="Login" source="c:\Users\User\Documents\p1\tests\login.robot">
-<test id="s1-t1" name="login correct username et correct password" line="10">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T15:07:27.320542" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Data" source="c:\Users\User\Documents\p1\tests\login_data.robot">
+<test id="s1-t1" name="affichage ${username}" line="17">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T14:38:34.639706" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
+<msg time="2025-03-25T15:07:27.573314" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>remote_url:http://127.0.0.1:4444/</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-25T14:38:34.639336" elapsed="7.335484"/>
+<status status="PASS" start="2025-03-25T15:07:27.572933" elapsed="1.500413"/>
 </kw>
-<kw name="login avec username et password">
-<msg time="2025-03-25T14:38:41.980193" level="FAIL">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</msg>
-<arg>standard_user</arg>
-<arg>secret_sauce</arg>
-<arg>ok</arg>
-<status status="FAIL" start="2025-03-25T14:38:41.979515" elapsed="0.002322">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
+<kw name="affichage">
+<msg time="2025-03-25T15:07:29.077961" level="FAIL">Variable '${password}' not found.</msg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="FAIL" start="2025-03-25T15:07:29.076328" elapsed="0.002300">Variable '${password}' not found.</status>
 </kw>
-<status status="FAIL" start="2025-03-25T14:38:34.637977" elapsed="7.345552">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</test>
-<test id="s1-t2" name="login correct username et correct password" line="12">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T14:38:41.987381" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-25T14:38:41.986978" elapsed="5.935006"/>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-25T15:07:29.080528" elapsed="2.171085"/>
 </kw>
-<kw name="login avec username et password">
-<msg time="2025-03-25T14:38:47.924962" level="FAIL">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</msg>
-<arg>visual_user</arg>
-<arg>secret_sauce</arg>
-<arg>ok</arg>
-<status status="FAIL" start="2025-03-25T14:38:47.924706" elapsed="0.000458">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</kw>
-<status status="FAIL" start="2025-03-25T14:38:41.985391" elapsed="5.940628">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</test>
-<test id="s1-t3" name="login correct username et correct password" line="13">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T14:38:47.929311" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-25T14:38:47.928896" elapsed="5.761795"/>
-</kw>
-<kw name="login avec username et password">
-<msg time="2025-03-25T14:38:53.693045" level="FAIL">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</msg>
-<arg>error_user</arg>
-<arg>secret_sauce</arg>
-<arg>ok</arg>
-<status status="FAIL" start="2025-03-25T14:38:53.692880" elapsed="0.000310">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</kw>
-<status status="FAIL" start="2025-03-25T14:38:47.927544" elapsed="5.766427">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</test>
-<test id="s1-t4" name="login correct username et correct password" line="14">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T14:38:53.697940" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-25T14:38:53.697533" elapsed="5.803580"/>
-</kw>
-<kw name="login avec username et password">
-<msg time="2025-03-25T14:38:59.504452" level="FAIL">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</msg>
-<arg>problem_user</arg>
-<arg>secret_sauce</arg>
-<arg>ok</arg>
-<status status="FAIL" start="2025-03-25T14:38:59.504189" elapsed="0.000555">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</kw>
-<status status="FAIL" start="2025-03-25T14:38:53.695588" elapsed="5.809763">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</test>
-<test id="s1-t5" name="login correct username et correct password" line="15">
-<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T14:38:59.511484" level="INFO">Opening browser 'firefox' to base url 'https://www.saucedemo.com/'.</msg>
-<arg>https://www.saucedemo.com/</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-03-25T14:38:59.510898" elapsed="5.748097"/>
-</kw>
-<kw name="login avec username et password">
-<msg time="2025-03-25T14:39:05.263319" level="FAIL">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</msg>
-<arg>performance_glitch_user</arg>
-<arg>secret_sauce</arg>
-<arg>ok</arg>
-<status status="FAIL" start="2025-03-25T14:39:05.262910" elapsed="0.000728">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
-</kw>
-<status status="FAIL" start="2025-03-25T14:38:59.508835" elapsed="5.756184">No keyword with name 'login avec username et password' found. Did you try using keyword 'BuiltIn.Log' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="FAIL" start="2025-03-25T15:07:27.571014" elapsed="3.682267">Variable '${password}' not found.</status>
 </test>
 <doc>importer la lib selenium</doc>
-<status status="FAIL" start="2025-03-25T14:38:34.377440" elapsed="30.889474"/>
+<status status="FAIL" start="2025-03-25T15:07:27.325235" elapsed="3.932137"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="5" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login" id="s1" pass="0" fail="5" skip="0">Login</stat>
+<stat name="Login Data" id="s1" pass="0" fail="1" skip="0">Login Data</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-25T14:38:34.635084" level="ERROR">Error in file 'c:\Users\User\Documents\p1\tests\login.robot' on line 5: Resource file '..\templates\login_template.robot' does not exist.</msg>
-<msg time="2025-03-25T14:38:41.985524" level="WARN">Multiple tests with name 'login correct username et correct password' executed in suite 'Login'.</msg>
-<msg time="2025-03-25T14:38:47.927609" level="WARN">Multiple tests with name 'login correct username et correct password' executed in suite 'Login'.</msg>
-<msg time="2025-03-25T14:38:53.695712" level="WARN">Multiple tests with name 'login correct username et correct password' executed in suite 'Login'.</msg>
-<msg time="2025-03-25T14:38:59.508913" level="WARN">Multiple tests with name 'login correct username et correct password' executed in suite 'Login'.</msg>
+<msg time="2025-03-25T15:07:27.563351" level="ERROR">[ DataDriver ] Error in robot file:
+  File "c:\Users\User\Documents\p1\tests\login_data.robot", line 0</msg>
+<msg time="2025-03-25T15:07:27.565525" level="ERROR">In source file:
+  File "../data/loginData.csv", line 0</msg>
+<msg time="2025-03-25T15:07:27.569085" level="ERROR">Calling method '_start_suite' of listener 'DataDriver' failed: FileNotFoundError: File attribute was not a full path. Tried to find c:\Users\User\Documents\p1\tests\..\data\loginData.csv but file does not exist.</msg>
 </errors>
 </robot>

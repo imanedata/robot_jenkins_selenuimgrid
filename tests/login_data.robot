@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 Resource    ../templates/login_template.resource    
 #Test Template    Login Avec Username Et Password
 Test Template    affichage
-Test Setup    Open Browser    ${url}    ${browser}    
+Test Setup    Open Browser    ${url}    ${browser}    remote_url:http://127.0.0.1:4444/
 Test Teardown    Close All Browsers
 Library    DataDriver    ../data/loginData.csv    dialect=excel    delimiter=,    encoding=utf-8
 
