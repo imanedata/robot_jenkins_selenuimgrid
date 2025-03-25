@@ -2,7 +2,7 @@
 Documentation    importer la lib selenium
 Library    SeleniumLibrary
 Resource    ../pages/login_page.resource
-Resource    ../templates/login_template.robot
+Resource    ../templates/login_template.resource
 Test Template    login avec username et password
 Test Setup  Open Browser    https://www.saucedemo.com/
 

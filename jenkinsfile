@@ -18,7 +18,7 @@ pipeline {
     stage('Run Selenium Tests') {
             steps {
                 // Exécution des tests avec Selenium
-                sh 'robot tests.robot -Dselenium.grid.url=$SELENIUM_GRID_URL'
+                sh 'robot login.robot -Dselenium.grid.url=$SELENIUM_GRID_URL'
             }
     }
     }
