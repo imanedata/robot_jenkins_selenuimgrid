@@ -1,91 +1,304 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T23:55:56.303846" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-26T10:32:09.659631" rpa="false" schemaversion="5">
 <suite id="s1" name="Login Data" source="C:\Users\User\Documents\p1\tests\login_data.robot">
 <test id="s1-t1" name="Case 1" line="16">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T23:55:56.653471" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
-<msg time="2025-03-25T23:56:17.694014" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145F5BCB0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:56:38.716646" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035A90&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:56:59.753552" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035D10&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:57:20.792836" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-03-25T23:57:20.793454" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804C8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
+<msg time="2025-03-26T10:32:10.002905" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.28:4444/wd/hub'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
-<arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
+<arg>remote_url=http://192.168.1.28:4444/wd/hub</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-03-25T23:55:56.653016" elapsed="84.182149">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804C8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="PASS" start="2025-03-26T10:32:10.002566" elapsed="4.550122"/>
+</kw>
+<kw name="affichage">
+<kw name="Login Avec Username Et Password" owner="login_template">
+<kw name="Saisir Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:14.585688" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${usernameElement}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:14.584896" elapsed="1.400906"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-26T10:32:14.584132" elapsed="1.402121"/>
+</kw>
+<kw name="Saisir Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:15.988896" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-26T10:32:16.496547" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordElement}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:15.987947" elapsed="0.919685"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-26T10:32:15.986878" elapsed="0.921161"/>
+</kw>
+<kw name="Cliquer Sur Le Bouton Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:16.910220" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${loginButtonElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:16.909550" elapsed="1.021646"/>
+</kw>
+<status status="PASS" start="2025-03-26T10:32:16.908590" elapsed="1.022998"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${resultat}&quot;== &quot;ok&quot;">
+<kw name="Get Page Title" owner="login_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:18.349209" level="INFO">${res} = Products</msg>
+<var>${res}</var>
+<arg>${pageTitleElement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:17.934153" elapsed="0.415221"/>
+</kw>
+<return>
+<value>${res}</value>
+<status status="PASS" start="2025-03-26T10:32:18.349685" elapsed="0.000270"/>
+</return>
+<msg time="2025-03-26T10:32:18.350556" level="INFO">${text} = Products</msg>
+<var>${text}</var>
+<status status="PASS" start="2025-03-26T10:32:17.933188" elapsed="0.417493"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Products</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-26T10:32:18.351219" elapsed="0.000895"/>
+</kw>
+<status status="PASS" start="2025-03-26T10:32:17.932038" elapsed="0.420396"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Error Message" owner="login_page">
+<var>${res}</var>
+<status status="NOT RUN" start="2025-03-26T10:32:18.353281" elapsed="0.000140"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${res}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-26T10:32:18.353833" elapsed="0.000166"/>
+</kw>
+<status status="NOT RUN" start="2025-03-26T10:32:18.352707" elapsed="0.001468"/>
+</branch>
+<status status="PASS" start="2025-03-26T10:32:17.931867" elapsed="0.422463"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="PASS" start="2025-03-26T10:32:14.583161" elapsed="3.771422"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=secret_sauce</arg>
+<arg>resultat=ok</arg>
+<status status="PASS" start="2025-03-26T10:32:14.581993" elapsed="3.772886"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-03-25T23:57:20.836252" elapsed="0.000381"/>
+<status status="PASS" start="2025-03-26T10:32:18.356323" elapsed="0.292114"/>
 </kw>
-<status status="FAIL" start="2025-03-25T23:55:56.650307" elapsed="84.186738">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804C8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="PASS" start="2025-03-26T10:32:10.000271" elapsed="8.648916"/>
 </test>
 <test id="s1-t2" name="Case 2" line="16">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T23:57:20.841786" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
-<msg time="2025-03-25T23:57:41.873762" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804DCD0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:58:02.912491" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145FE60F0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:58:23.940342" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C380&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:58:44.971750" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-03-25T23:58:44.972280" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
+<msg time="2025-03-26T10:32:18.656813" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.28:4444/wd/hub'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
-<arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
+<arg>remote_url=http://192.168.1.28:4444/wd/hub</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-03-25T23:57:20.841376" elapsed="84.152482">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="PASS" start="2025-03-26T10:32:18.655842" elapsed="4.085922"/>
+</kw>
+<kw name="affichage">
+<kw name="Login Avec Username Et Password" owner="login_template">
+<kw name="Saisir Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:22.744231" level="INFO">Typing text 'Sstandar' into text field 'id:user-name'.</msg>
+<arg>${usernameElement}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:22.743908" elapsed="0.925387"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-26T10:32:22.743489" elapsed="0.925943"/>
+</kw>
+<kw name="Saisir Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:23.670238" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-26T10:32:24.075844" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordElement}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:23.669989" elapsed="0.815449"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-26T10:32:23.669622" elapsed="0.816236"/>
+</kw>
+<kw name="Cliquer Sur Le Bouton Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:24.488080" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${loginButtonElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:24.487380" elapsed="0.817958"/>
+</kw>
+<status status="PASS" start="2025-03-26T10:32:24.486471" elapsed="0.819287"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${resultat}&quot;== &quot;ok&quot;">
+<kw name="Get Page Title" owner="login_page">
+<var>${text}</var>
+<status status="NOT RUN" start="2025-03-26T10:32:25.307211" elapsed="0.000144"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Products</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-03-26T10:32:25.307809" elapsed="0.000134"/>
+</kw>
+<status status="NOT RUN" start="2025-03-26T10:32:25.306161" elapsed="0.002005"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Error Message" owner="login_page">
+<return>
+<value>${errorElement}</value>
+<status status="PASS" start="2025-03-26T10:32:25.309556" elapsed="0.000207"/>
+</return>
+<msg time="2025-03-26T10:32:25.310346" level="INFO">${res} = css:.error-button</msg>
+<var>${res}</var>
+<status status="PASS" start="2025-03-26T10:32:25.308820" elapsed="0.001653"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:25.579869" level="INFO">Element 'css:.error-button' is displayed.</msg>
+<arg>${res}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-26T10:32:25.310908" elapsed="0.269418"/>
+</kw>
+<status status="PASS" start="2025-03-26T10:32:25.308332" elapsed="0.272281"/>
+</branch>
+<status status="PASS" start="2025-03-26T10:32:25.306016" elapsed="0.274822"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="PASS" start="2025-03-26T10:32:22.742966" elapsed="2.838116"/>
+</kw>
+<arg>username=Sstandar</arg>
+<arg>password=secret_sauce</arg>
+<arg>resultat=ko</arg>
+<status status="PASS" start="2025-03-26T10:32:22.742338" elapsed="2.839027"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-03-25T23:58:44.995510" elapsed="0.000693"/>
+<status status="PASS" start="2025-03-26T10:32:25.582636" elapsed="0.261532"/>
 </kw>
-<status status="FAIL" start="2025-03-25T23:57:20.839399" elapsed="84.157504">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="PASS" start="2025-03-26T10:32:18.651946" elapsed="7.192805"/>
 </test>
 <test id="s1-t3" name="Case 3" line="16">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T23:58:45.007033" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
-<msg time="2025-03-25T23:59:06.051791" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812CE20&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:59:27.077772" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D370&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:59:48.111049" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D590&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-26T00:00:09.162226" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-03-26T00:00:09.162684" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
+<msg time="2025-03-26T10:32:25.850466" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.28:4444/wd/hub'.</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
-<arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
+<arg>remote_url=http://192.168.1.28:4444/wd/hub</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-03-25T23:58:45.006054" elapsed="84.179446">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="PASS" start="2025-03-26T10:32:25.849852" elapsed="4.472267"/>
+</kw>
+<kw name="affichage">
+<kw name="Login Avec Username Et Password" owner="login_template">
+<kw name="Saisir Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:30.329465" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${usernameElement}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:30.328664" elapsed="1.221753"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-26T10:32:30.326117" elapsed="1.224685"/>
+</kw>
+<kw name="Saisir Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:31.553237" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-26T10:32:31.893817" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordElement}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:31.552466" elapsed="0.716163"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-26T10:32:31.551385" elapsed="0.717675"/>
+</kw>
+<kw name="Cliquer Sur Le Bouton Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:32.271228" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${loginButtonElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T10:32:32.270586" elapsed="0.715654"/>
+</kw>
+<status status="PASS" start="2025-03-26T10:32:32.269598" elapsed="0.717003"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${resultat}&quot;== &quot;ok&quot;">
+<kw name="Get Page Title" owner="login_page">
+<var>${text}</var>
+<status status="NOT RUN" start="2025-03-26T10:32:32.987961" elapsed="0.000187"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Products</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-03-26T10:32:32.988572" elapsed="0.000124"/>
+</kw>
+<status status="NOT RUN" start="2025-03-26T10:32:32.986926" elapsed="0.001948"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Error Message" owner="login_page">
+<return>
+<value>${errorElement}</value>
+<status status="PASS" start="2025-03-26T10:32:32.990203" elapsed="0.000164"/>
+</return>
+<msg time="2025-03-26T10:32:32.990874" level="INFO">${res} = css:.error-button</msg>
+<var>${res}</var>
+<status status="PASS" start="2025-03-26T10:32:32.989537" elapsed="0.001454"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-26T10:32:33.230255" level="INFO">Element 'css:.error-button' is displayed.</msg>
+<arg>${res}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-26T10:32:32.991452" elapsed="0.239064"/>
+</kw>
+<status status="PASS" start="2025-03-26T10:32:32.989029" elapsed="0.241704"/>
+</branch>
+<status status="PASS" start="2025-03-26T10:32:32.986835" elapsed="0.244034"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="PASS" start="2025-03-26T10:32:30.324815" elapsed="2.906247"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=secret</arg>
+<arg>resultat=ko</arg>
+<status status="PASS" start="2025-03-26T10:32:30.323277" elapsed="2.908070"/>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-03-26T00:00:09.186761" elapsed="0.000327"/>
+<status status="PASS" start="2025-03-26T10:32:33.232488" elapsed="0.262690"/>
 </kw>
-<status status="FAIL" start="2025-03-25T23:58:45.001664" elapsed="84.185816">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="PASS" start="2025-03-26T10:32:25.846943" elapsed="7.648641"/>
 </test>
 <doc>importer la lib selenium</doc>
-<status status="FAIL" start="2025-03-25T23:55:56.305362" elapsed="252.885269"/>
+<status status="PASS" start="2025-03-26T10:32:09.661396" elapsed="23.836290"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="3" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Login Data" id="s1" pass="0" fail="3" skip="0">Login Data</stat>
+<stat name="Login Data" id="s1" pass="3" fail="0" skip="0">Login Data</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-25T23:56:17.694014" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145F5BCB0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:56:38.716646" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035A90&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:56:59.753552" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035D10&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:57:41.873762" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804DCD0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:58:02.912491" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145FE60F0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:58:23.940342" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C380&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:59:06.051791" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812CE20&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:59:27.077772" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D370&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T23:59:48.111049" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D590&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
 </errors>
 </robot>
