@@ -18,13 +18,15 @@ pipeline {
             steps {
                
                 sh  'python3 -m robot -d results tests/login_data.robot'
+                
                 stash name: 'results', includes: 'results/*'
             }
     }
     post {
         always {
-            // Unstash the allure results
-            unstash 'allure-results'
+            
+            unstash 'results'
+            archiveArtifacts artifacts: 'results/*.html', fingerprint: true
         }
     }
    
