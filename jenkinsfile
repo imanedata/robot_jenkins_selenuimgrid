@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Install python') {
             steps {
-                // Sauvegarde des dépendances dans requirements.txt
+                
                 sh 'pip freeze > requirements.txt'
                 sh 'python3 -m pip install -r requirements.txt'
             }
@@ -16,22 +16,29 @@ pipeline {
 
         stage('Run Selenium Tests') {
             steps {
-                // Exécution des tests Robot Framework et génération des rapports dans 'results/'
-                sh 'python3 -m robot -d results tests/login_data.robot'
+
+                sh 'python3 -m robot tests/login_data.robot'
                 
-                // Sauvegarde des fichiers de résultats dans une stash
-                stash name: 'results', includes: 'results/*'
+                
             }
         }
     }
 
     post {
-        always {
-            // Déstocker les résultats pour pouvoir les utiliser après l'exécution
-            unstash 'results'
-            
-            // Archiver les rapports HTML générés dans 'results/'
-            archiveArtifacts artifacts: 'results/*.html', fingerprint: true
-        }
-    }
+                always {
+                    // Note! Careful not to mix the Jenkins `robot` step with the `robot` command run inside the previous
+                    // `sh` step! The `robot` step _only_ publishes the results for Jenkins and the `robot` command
+                    // inside `sh` step runs the tests!
+                    robot(
+                        outputPath          : 'test_results',
+                        outputFileName      : "output.xml",
+                        reportFileName      : 'report.html',
+                        logFileName         : 'log.html',
+                        disableArchiveOutput: false,
+                        passThreshold       : 95.0,
+                        unstableThreshold   : 95.0,
+                        otherFiles          : "**/*.png",
+                    )
+                }
+            }
 }
