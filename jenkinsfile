@@ -21,11 +21,10 @@ pipeline {
                 stash name: 'results', includes: 'results/*'
             }
     }
-    stage('Publish Robot Reports') {
-            steps {
-
-                archiveArtifacts artifacts: 'results/*.html', fingerprint: true
-            }
+    post {
+        always {
+            // Unstash the allure results
+            unstash 'allure-results'
         }
     }
    
