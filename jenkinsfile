@@ -16,15 +16,17 @@ pipeline {
     
     stage('Run Selenium Tests') {
             steps {
-                // Exécution des tests avec Selenium
-                sh  'python3 -m robot tests/login_data.robot'
+               
+                sh  'python3 -m robot -d results tests/login_data.robot'
             }
     }
+    stage('Publish Robot Reports') {
+            steps {
+                archiveArtifacts artifacts: 'results/*.html', fingerprint: true
+            }
+        }
     }
    
       
-          
-
-
-
+    
 }

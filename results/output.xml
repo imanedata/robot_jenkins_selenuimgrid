@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-26T11:41:44.466478" rpa="false" schemaversion="5">
+<suite id="s1" name="Login Data" source="C:\Users\User\Documents\p1\tests\login_data.robot">
+<test id="s1-t1" name="Case 1" line="16">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-03-26T11:41:44.732732" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-26T11:41:44.732447" elapsed="0.784839"/>
+</kw>
+<kw name="affichage">
+<kw name="Login Avec Username Et Password" owner="login_template">
+<kw name="Saisir Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:45.519004" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${usernameElement}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:45.518710" elapsed="0.142215"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-26T11:41:45.518444" elapsed="0.142647"/>
+</kw>
+<kw name="Saisir Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:45.661813" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-26T11:41:45.710350" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordElement}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:45.661619" elapsed="0.101441"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-26T11:41:45.661261" elapsed="0.101909"/>
+</kw>
+<kw name="Cliquer Sur Le Bouton Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:45.763718" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${loginButtonElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:45.763551" elapsed="0.134833"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:45.763316" elapsed="0.135193"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${resultat}&quot;== &quot;ok&quot;">
+<kw name="Get Page Title" owner="login_page">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:45.928710" level="INFO">${res} = Products</msg>
+<var>${res}</var>
+<arg>${pageTitleElement}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:45.899285" elapsed="0.029465"/>
+</kw>
+<return>
+<value>${res}</value>
+<status status="PASS" start="2025-03-26T11:41:45.928882" elapsed="0.000074"/>
+</return>
+<msg time="2025-03-26T11:41:45.929085" level="INFO">${text} = Products</msg>
+<var>${text}</var>
+<status status="PASS" start="2025-03-26T11:41:45.898992" elapsed="0.030117"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Products</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-03-26T11:41:45.929242" elapsed="0.000161"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:45.898640" elapsed="0.030807"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Error Message" owner="login_page">
+<var>${res}</var>
+<status status="NOT RUN" start="2025-03-26T11:41:45.929732" elapsed="0.000028"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${res}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2025-03-26T11:41:45.929849" elapsed="0.000025"/>
+</kw>
+<status status="NOT RUN" start="2025-03-26T11:41:45.929573" elapsed="0.000335"/>
+</branch>
+<status status="PASS" start="2025-03-26T11:41:45.898601" elapsed="0.031339"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="PASS" start="2025-03-26T11:41:45.518135" elapsed="0.411853"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=secret_sauce</arg>
+<arg>resultat=ok</arg>
+<status status="PASS" start="2025-03-26T11:41:45.517696" elapsed="0.412353"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-26T11:41:45.930492" elapsed="0.095681"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:44.729725" elapsed="1.297303"/>
+</test>
+<test id="s1-t2" name="Case 2" line="16">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-03-26T11:41:46.036229" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-26T11:41:46.035197" elapsed="0.705948"/>
+</kw>
+<kw name="affichage">
+<kw name="Login Avec Username Et Password" owner="login_template">
+<kw name="Saisir Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:46.742652" level="INFO">Typing text 'Sstandar' into text field 'id:user-name'.</msg>
+<arg>${usernameElement}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:46.742454" elapsed="0.120607"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-26T11:41:46.742192" elapsed="0.120973"/>
+</kw>
+<kw name="Saisir Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:46.863761" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-26T11:41:46.920271" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordElement}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:46.863576" elapsed="0.109573"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-26T11:41:46.863306" elapsed="0.109955"/>
+</kw>
+<kw name="Cliquer Sur Le Bouton Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:46.973790" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${loginButtonElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:46.973630" elapsed="0.086345"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:46.973409" elapsed="0.086672"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${resultat}&quot;== &quot;ok&quot;">
+<kw name="Get Page Title" owner="login_page">
+<var>${text}</var>
+<status status="NOT RUN" start="2025-03-26T11:41:47.060459" elapsed="0.000033"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Products</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-03-26T11:41:47.060593" elapsed="0.000028"/>
+</kw>
+<status status="NOT RUN" start="2025-03-26T11:41:47.060176" elapsed="0.000484"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Error Message" owner="login_page">
+<return>
+<value>${errorElement}</value>
+<status status="PASS" start="2025-03-26T11:41:47.060970" elapsed="0.000054"/>
+</return>
+<msg time="2025-03-26T11:41:47.061142" level="INFO">${res} = css:.error-button</msg>
+<var>${res}</var>
+<status status="PASS" start="2025-03-26T11:41:47.060799" elapsed="0.000370"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:47.095566" level="INFO">Element 'css:.error-button' is displayed.</msg>
+<arg>${res}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-26T11:41:47.061267" elapsed="0.034390"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:47.060695" elapsed="0.035027"/>
+</branch>
+<status status="PASS" start="2025-03-26T11:41:47.060149" elapsed="0.035618"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="PASS" start="2025-03-26T11:41:46.741869" elapsed="0.353957"/>
+</kw>
+<arg>username=Sstandar</arg>
+<arg>password=secret_sauce</arg>
+<arg>resultat=ko</arg>
+<status status="PASS" start="2025-03-26T11:41:46.741471" elapsed="0.354420"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-26T11:41:47.096225" elapsed="0.124235"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:46.030181" elapsed="1.190452"/>
+</test>
+<test id="s1-t3" name="Case 3" line="16">
+<kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
+<msg time="2025-03-26T11:41:47.222602" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+<arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-03-26T11:41:47.222395" elapsed="0.840663"/>
+</kw>
+<kw name="affichage">
+<kw name="Login Avec Username Et Password" owner="login_template">
+<kw name="Saisir Username" owner="login_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:48.066365" level="INFO">Typing text 'standard_user' into text field 'id:user-name'.</msg>
+<arg>${usernameElement}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:48.066003" elapsed="0.119922"/>
+</kw>
+<arg>${username}</arg>
+<status status="PASS" start="2025-03-26T11:41:48.064767" elapsed="0.121269"/>
+</kw>
+<kw name="Saisir Password" owner="login_page">
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:48.186645" level="INFO">Typing password into text field 'id:password'.</msg>
+<msg time="2025-03-26T11:41:48.232808" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>${passwordElement}</arg>
+<arg>${password}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:48.186436" elapsed="0.089298"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-03-26T11:41:48.186177" elapsed="0.089692"/>
+</kw>
+<kw name="Cliquer Sur Le Bouton Login" owner="login_page">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:48.276683" level="INFO">Clicking button 'id:login-button'.</msg>
+<arg>${loginButtonElement}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-03-26T11:41:48.276442" elapsed="0.085508"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:48.276146" elapsed="0.085907"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${resultat}&quot;== &quot;ok&quot;">
+<kw name="Get Page Title" owner="login_page">
+<var>${text}</var>
+<status status="NOT RUN" start="2025-03-26T11:41:48.362425" elapsed="0.000034"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${text}</arg>
+<arg>Products</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="NOT RUN" start="2025-03-26T11:41:48.362559" elapsed="0.000028"/>
+</kw>
+<status status="NOT RUN" start="2025-03-26T11:41:48.362144" elapsed="0.000482"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Error Message" owner="login_page">
+<return>
+<value>${errorElement}</value>
+<status status="PASS" start="2025-03-26T11:41:48.362927" elapsed="0.000041"/>
+</return>
+<msg time="2025-03-26T11:41:48.363078" level="INFO">${res} = css:.error-button</msg>
+<var>${res}</var>
+<status status="PASS" start="2025-03-26T11:41:48.362765" elapsed="0.000338"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-03-26T11:41:48.398378" level="INFO">Element 'css:.error-button' is displayed.</msg>
+<arg>${res}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-03-26T11:41:48.363195" elapsed="0.035270"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:48.362663" elapsed="0.035867"/>
+</branch>
+<status status="PASS" start="2025-03-26T11:41:48.362117" elapsed="0.036453"/>
+</if>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${resultat}</arg>
+<status status="PASS" start="2025-03-26T11:41:48.064161" elapsed="0.334463"/>
+</kw>
+<arg>username=standard_user</arg>
+<arg>password=secret</arg>
+<arg>resultat=ko</arg>
+<status status="PASS" start="2025-03-26T11:41:48.063489" elapsed="0.335199"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2025-03-26T11:41:48.399044" elapsed="0.095951"/>
+</kw>
+<status status="PASS" start="2025-03-26T11:41:47.221422" elapsed="1.273817"/>
+</test>
+<doc>importer la lib selenium</doc>
+<status status="PASS" start="2025-03-26T11:41:44.467923" elapsed="4.028346"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Login Data" id="s1" pass="3" fail="0" skip="0">Login Data</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
