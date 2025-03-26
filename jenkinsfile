@@ -5,32 +5,33 @@ pipeline {
         }
     }
 
-    
     stages {
-        stage('Install python'){
-                steps {
-                sh'pip freeze > requirements.txt'
-                sh ' python3 -m pip install -r requirements.txt'
+        stage('Install python') {
+            steps {
+                // Sauvegarde des dépendances dans requirements.txt
+                sh 'pip freeze > requirements.txt'
+                sh 'python3 -m pip install -r requirements.txt'
             }
         }
-    
-    stage('Run Selenium Tests') {
+
+        stage('Run Selenium Tests') {
             steps {
-               
-                sh  'python3 -m robot -d results tests/login_data.robot'
+                // Exécution des tests Robot Framework et génération des rapports dans 'results/'
+                sh 'python3 -m robot -d results tests/login_data.robot'
                 
+                // Sauvegarde des fichiers de résultats dans une stash
                 stash name: 'results', includes: 'results/*'
             }
+        }
     }
+
     post {
         always {
-            
+            // Déstocker les résultats pour pouvoir les utiliser après l'exécution
             unstash 'results'
+            
+            // Archiver les rapports HTML générés dans 'results/'
             archiveArtifacts artifacts: 'results/*.html', fingerprint: true
         }
     }
-   
-      
-
-    }  
 }
