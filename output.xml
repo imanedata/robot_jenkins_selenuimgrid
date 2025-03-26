@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T21:54:32.293226" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-03-25T23:55:56.303846" rpa="false" schemaversion="5">
 <suite id="s1" name="Login Data" source="C:\Users\User\Documents\p1\tests\login_data.robot">
 <test id="s1-t1" name="Case 1" line="16">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T21:54:32.543496" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
-<msg time="2025-03-25T21:54:53.581489" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9BDBCB0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:55:14.650246" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CA5A90&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:55:35.692805" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CA5D10&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:55:56.709409" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-03-25T21:55:56.709810" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CBC8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
+<msg time="2025-03-25T23:55:56.653471" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
+<msg time="2025-03-25T23:56:17.694014" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145F5BCB0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:56:38.716646" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035A90&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:56:59.753552" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035D10&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:57:20.792836" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-25T23:57:20.793454" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804C8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-03-25T21:54:32.543212" elapsed="84.177686">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CBC8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="FAIL" start="2025-03-25T23:55:56.653016" elapsed="84.182149">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804C8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-03-25T21:55:56.721487" elapsed="0.000192"/>
+<status status="PASS" start="2025-03-25T23:57:20.836252" elapsed="0.000381"/>
 </kw>
-<status status="FAIL" start="2025-03-25T21:54:32.541396" elapsed="84.180507">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CBC8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="FAIL" start="2025-03-25T23:55:56.650307" elapsed="84.186738">Setup failed:
+MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804C8A0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
 </test>
 <test id="s1-t2" name="Case 2" line="16">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T21:55:56.724808" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
-<msg time="2025-03-25T21:56:17.747658" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CBDCD0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:56:38.790598" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9C660F0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:56:59.833333" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9C380&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:57:20.867448" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-03-25T21:57:20.867615" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
+<msg time="2025-03-25T23:57:20.841786" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
+<msg time="2025-03-25T23:57:41.873762" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804DCD0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:58:02.912491" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145FE60F0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:58:23.940342" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C380&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:58:44.971750" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-25T23:58:44.972280" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-03-25T21:55:56.724538" elapsed="84.147925">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="FAIL" start="2025-03-25T23:57:20.841376" elapsed="84.152482">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-03-25T21:57:20.872963" elapsed="0.000167"/>
+<status status="PASS" start="2025-03-25T23:58:44.995510" elapsed="0.000693"/>
 </kw>
-<status status="FAIL" start="2025-03-25T21:55:56.723486" elapsed="84.149835">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="FAIL" start="2025-03-25T23:57:20.839399" elapsed="84.157504">Setup failed:
+MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C6B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
 </test>
 <test id="s1-t3" name="Case 3" line="16">
 <kw name="Open Browser" owner="SeleniumLibrary" type="SETUP">
-<msg time="2025-03-25T21:57:20.875767" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
-<msg time="2025-03-25T21:57:41.915516" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9CE20&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:58:02.960125" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D370&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:58:24.004664" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D590&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:58:45.052750" level="INFO">Cannot capture screenshot because no browser is open.</msg>
-<msg time="2025-03-25T21:58:45.053000" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
+<msg time="2025-03-25T23:58:45.007033" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/' through remote server at 'http://192.168.1.112:4444/wd/hub'.</msg>
+<msg time="2025-03-25T23:59:06.051791" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812CE20&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:59:27.077772" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D370&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:59:48.111049" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D590&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-26T00:00:09.162226" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg time="2025-03-26T00:00:09.162684" level="FAIL">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</msg>
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <arg>remote_url=http://192.168.1.112:4444/wd/hub</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="FAIL" start="2025-03-25T21:57:20.875573" elapsed="84.184092">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="FAIL" start="2025-03-25T23:58:45.006054" elapsed="84.179446">MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
 </kw>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2025-03-25T21:58:45.060224" elapsed="0.000165"/>
+<status status="PASS" start="2025-03-26T00:00:09.186761" elapsed="0.000327"/>
 </kw>
-<status status="FAIL" start="2025-03-25T21:57:20.874698" elapsed="84.185813">Setup failed:
-MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
+<status status="FAIL" start="2025-03-25T23:58:45.001664" elapsed="84.185816">Setup failed:
+MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries exceeded with url: /wd/hub/session (Caused by ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D7B0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)'))</status>
 </test>
 <doc>importer la lib selenium</doc>
-<status status="FAIL" start="2025-03-25T21:54:32.294584" elapsed="252.766788"/>
+<status status="FAIL" start="2025-03-25T23:55:56.305362" elapsed="252.885269"/>
 </suite>
 <statistics>
 <total>
@@ -78,14 +78,14 @@ MaxRetryError: HTTPConnectionPool(host='192.168.1.112', port=4444): Max retries 
 </suite>
 </statistics>
 <errors>
-<msg time="2025-03-25T21:54:53.581489" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9BDBCB0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:55:14.650246" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CA5A90&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:55:35.692805" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CA5D10&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:56:17.747658" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9CBDCD0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:56:38.790598" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9C660F0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:56:59.833333" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9C380&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:57:41.915516" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9CE20&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:58:02.960125" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D370&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
-<msg time="2025-03-25T21:58:24.004664" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002A2D9D9D590&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:56:17.694014" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145F5BCB0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:56:38.716646" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035A90&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:56:59.753552" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022148035D10&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:57:41.873762" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214804DCD0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:58:02.912491" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x0000022145FE60F0&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:58:23.940342" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812C380&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:59:06.051791" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812CE20&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:59:27.077772" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D370&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
+<msg time="2025-03-25T23:59:48.111049" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectTimeoutError(&lt;urllib3.connection.HTTPConnection object at 0x000002214812D590&gt;, 'Connection to 192.168.1.112 timed out. (connect timeout=None)')': /wd/hub/session</msg>
 </errors>
 </robot>
