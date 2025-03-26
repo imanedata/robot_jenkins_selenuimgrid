@@ -18,10 +18,12 @@ pipeline {
             steps {
                
                 sh  'python3 -m robot -d results tests/login_data.robot'
+                stash name: 'results', includes: 'results/*'
             }
     }
     stage('Publish Robot Reports') {
             steps {
+
                 archiveArtifacts artifacts: 'results/*.html', fingerprint: true
             }
         }
