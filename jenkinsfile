@@ -17,9 +17,9 @@ pipeline {
         stage('Run Selenium Tests') {
             steps {
 
-                sh 'python3 -m robot tests/login_data.robot'
+                sh 'python3 -m robot -d results tests/login_data.robot'
                 
-                
+            
             }
         }
     }
@@ -30,7 +30,7 @@ pipeline {
                     // `sh` step! The `robot` step _only_ publishes the results for Jenkins and the `robot` command
                     // inside `sh` step runs the tests!
                     robot(
-                        outputPath          : 'test_results',
+                        outputPath          : 'results',
                         outputFileName      : "output.xml",
                         reportFileName      : 'report.html',
                         logFileName         : 'log.html',
