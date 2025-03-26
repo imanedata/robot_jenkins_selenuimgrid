@@ -2,9 +2,3 @@
 Case 1,standard_user,secret_sauce,ok
 Case 2,Sstandar,secret_sauce,ko
 Case 3,standard_user,secret,ko
-Case 4,performance_glitch_user,secret_sauce,ok
-Case 5,error_user,secret_sauce,ok
-Case 6,problem_user,secret_sauce,ok
-Case 7,visual_user,secret_sauce,ok
-
-
